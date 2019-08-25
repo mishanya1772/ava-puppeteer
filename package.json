@@ -1,19 +1,27 @@
 {
-  "name": "ava-puppeteer-example",
+  "name": "examples of different parallel running",
   "version": "1.0.0",
-  "description": "Example of browser tests using AVA with puppeteer",
+  "description": "Examples of parallel running browser tests using AVA + puppeteer, Protractor + Jasmine2",
   "license": "(͡° ͜ʖ ͡°)",
-  "devDependencies": {
-    "ava": "2.1.0",
-    "puppeteer": "^1.19.0"
-  },
   "scripts": {
+    "protrcator": "protractor tests/protractor/config.js",
     "test:concurrency": "ava -v -d",
     "test-serial": "ava -v -s -d"
   },
+  "dependencies": {
+    "protractor": "^5.4.2",
+    "ava": "2.1.0",
+    "puppeteer": "^1.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jasmine-spec-reporter": "^4.2.1"
+  },
   "ava": {
     "files": [
-      "**/sample*.js"
+      "**/ava/sample*.js"
     ]
   }
 }
