@@ -1,0 +1,19 @@
+{
+  "name": "ava-puppeteer-example",
+  "version": "1.0.0",
+  "description": "Example of browser tests using AVA with puppeteer",
+  "license": "(͡° ͜ʖ ͡°)",
+  "devDependencies": {
+    "ava": "2.1.0",
+    "puppeteer": "^1.19.0"
+  },
+  "scripts": {
+    "test:concurrency": "ava -v -d",
+    "test-serial": "ava -v -s -d"
+  },
+  "ava": {
+    "files": [
+      "**/sample*.js"
+    ]
+  }
+}
