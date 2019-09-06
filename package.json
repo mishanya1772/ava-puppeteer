@@ -1,20 +1,35 @@
 {
-  "name": "examples of different parallel running",
+  "name": "examples",
   "version": "1.0.0",
   "description": "Examples of parallel running browser tests using AVA + puppeteer, Protractor + Jasmine2",
-  "license": "(͡° ͜ʖ ͡°)",
-  "scripts": {
-    "protrcator": "protractor tests/protractor/config.js",
-    "test:concurrency": "ava -v -d",
-    "test-serial": "ava -v -s -d"
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
   },
+  "scripts": {
+    "webdriver:start": "webdriver-manager update & selenium-standalone start",
+    "protrcator:thread": "protractor tests/protractor/config.js",
+    "protrcator:threads": "protractor tests/protractor/config.parallel.js",
+    "ava:concurrency": "ava -v -d",
+    "ava-serial": "ava -v -s -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mishanya1772/different-e2e-parallel-runs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mishanya1772/different-e2e-parallel-runs/issues"
+  },
+  "homepage": "https://github.com/mishanya1772/different-e2e-parallel-runs#readme",
   "dependencies": {
+    "ava": "^2.3.0",
+    "eslint": "^6.3.0",
     "protractor": "^5.4.2",
-    "ava": "2.1.0",
     "puppeteer": "^1.19.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "jasmine-spec-reporter": "^4.2.1"
