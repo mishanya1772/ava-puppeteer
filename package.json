@@ -1,16 +1,18 @@
 {
-  "name": "examples of different parallel running",
+  "name": "examples",
   "version": "1.0.0",
   "description": "Examples of parallel running browser tests using AVA + puppeteer, Protractor + Jasmine2",
   "license": "(͡° ͜ʖ ͡°)",
   "scripts": {
     "protrcator": "protractor tests/protractor/config.js",
     "test:concurrency": "ava -v -d",
-    "test-serial": "ava -v -s -d"
+    "test-serial": "ava -v -s -d",
+    "jest": "jest tests/jest/"
   },
   "dependencies": {
-    "protractor": "^5.4.2",
     "ava": "2.1.0",
+    "jest": "^24.9.0",
+    "protractor": "^5.4.2",
     "puppeteer": "^1.19.0"
   },
   "devDependencies": {
