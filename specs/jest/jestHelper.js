@@ -1,20 +1,25 @@
 const puppeteer = require('puppeteer');
 
 const url = 'https://www.youtube.com';
+//
+// beforeEach(async () => {
+//   global.browser = await puppeteer.launch({
+//     headless: false,
+//     // slowMo: 100,
+//     defaultViewport: { width: 1920, height: 1080 },
+//     args: ['--window-size=1920,1080', '--disable-infobars'],
+//   });
+// });
 
-describe('take screenshot', () => {
-  let browser;
-
-  beforeAll(async () => {
-    browser = await puppeteer.launch({
+class basicActions {
+  async testExample() {
+    const browser = await puppeteer.launch({
       headless: false,
       // slowMo: 100,
       defaultViewport: { width: 1920, height: 1080 },
       args: ['--window-size=1920,1080', '--disable-infobars'],
     });
-  });
 
-  test('html template example', async () => {
     const page = await browser.newPage();
     await page.goto(url);
     await page.type('#search', 'puppeteer');
@@ -34,11 +39,10 @@ describe('take screenshot', () => {
     const element = await page.$('#identifierNext > span');
     const text = await (await element.getProperty('textContent')).jsonValue();
 
-    return page.close();
-  }, 30000);
+    // await t.is(text, 'Далее');
+    await page.close();
+    return browser.close();
+  }
+}
 
-
-  afterAll(async () => {
-    await browser.close();
-  });
-});
+module.exports = basicActions;

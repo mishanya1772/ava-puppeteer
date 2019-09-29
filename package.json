@@ -1,5 +1,5 @@
 {
-  "name": "examples",
+  "name": "parallel",
   "version": "1.0.0",
   "description": "Examples of parallel running browser tests using AVA + puppeteer, Protractor + Jasmine2",
   "main": "index.js",
@@ -7,11 +7,13 @@
     "test": "tests"
   },
   "scripts": {
-    "webdriver:start": "webdriver-manager update & selenium-standalone start",
-    "protrcator:thread": "protractor tests/protractor/config.js",
-    "protrcator:threads": "protractor tests/protractor/config.parallel.js",
+    "webdriver:start": "webdriver-manager update && webdriver-manager start",
+    "protrcator:thread": "protractor specs/protractor/config.js",
+    "protrcator:threads": "protractor specs/protractor/config.parallel.js",
     "ava:concurrency": "ava -v -d",
-    "ava-serial": "ava -v -s -d"
+    "ava-serial": "ava -v -s -d",
+    "jest:thread": "jest --runInBand",
+    "jest:threads": "jest --maxWorkers=2"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,10 @@
   },
   "homepage": "https://github.com/mishanya1772/different-e2e-parallel-runs#readme",
   "dependencies": {
-    "protractor": "^5.4.2",
     "ava": "2.1.0",
+    "babel-jest": "^25.0.0",
+    "jest": "^24.9.0",
+    "protractor": "^5.4.2",
     "puppeteer": "^1.19.0"
   },
   "devDependencies": {
@@ -37,6 +41,18 @@
   "ava": {
     "files": [
       "**/ava/sample*.js"
+    ]
+  },
+  "jest": {
+    "scriptPreprocessor": "../node_modules/babel-jest",
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
     ]
   }
 }

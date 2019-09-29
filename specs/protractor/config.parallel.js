@@ -10,7 +10,7 @@ exports.config = {
       maxInstances: 1,
       sequential: true,
       browserName: 'chrome',
-      specs: ['./Sample1.js'],
+      specs: ['./Sample2.js'],
     },
     {
       shardTestFiles: true,

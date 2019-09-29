@@ -2,7 +2,7 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['Sample*'],
+  specs: ['./Sample*'],
   useAllAngular2AppRoots: true,
   protractor: true,
   capabilities: {
