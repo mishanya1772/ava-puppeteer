@@ -1,6 +1,6 @@
 # Examples of different parallel running
 
-### 1. Running e2e tests using AVA + puppeteer; Protractor + Jasmine2
+### Running e2e tests using AVA + puppeteer; Protractor + Jasmine2
 
 * clone the project
 * open terminal and enter: **npm i**
