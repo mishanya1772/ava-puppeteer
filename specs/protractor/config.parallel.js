@@ -7,6 +7,9 @@ exports.config = {
   protractor: true,
   capabilities: {
     browserName: 'chrome',
+    chromeOptions: {
+      args: ['--window-size=1920,1080'],
+    },
     shardTestFiles: true,
     maxInstances: 4,
   },

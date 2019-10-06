@@ -15,9 +15,15 @@ class basicActions {
       browser.sleep(1000);
     }
 
-    await $$('.style-suggestive.size-small').get(0).click();
+    await $$('.style-suggestive.size-small').get(2).click();
     await browser.wait(EC.visibilityOf($('#identifierNext > span')), 6000);
     return expect($('#identifierNext > span').getText()).toEqual('Далее');
+
+    /* for Headless mod
+    const login = await $$('.style-suggestive.size-small').get(2).getText();
+    expect(login).toEqual('УВІЙТИ'); // Увійти - headless
+    return $$('.style-suggestive.size-small').get(2).click();
+    */
   }
 }
 
