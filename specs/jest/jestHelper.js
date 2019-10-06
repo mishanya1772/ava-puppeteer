@@ -5,7 +5,7 @@ let browser;
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     // slowMo: 100,
     defaultViewport: { width: 1920, height: 1080 },
     args: ['--window-size=1920,1080', '--disable-infobars'],
@@ -28,7 +28,6 @@ class basicActions {
       await page.waitFor(1000);
     }
 
-    /*
     const login = await page.$$('.style-suggestive.size-small');
     await login[0].click();
 
@@ -37,16 +36,15 @@ class basicActions {
     const text = await (await element.getProperty('textContent')).jsonValue();
     expect(await text).toEqual('Далее');
     return page.close();
-    */
 
+    /* for Headless mod
     const login = await page.$$('.style-suggestive.size-small');
-    const text = await (await login[0].getProperty('textContent')).jsonValue();
-    expect(text).toContain('Увійти');
+    const text = await (await login[2].getProperty('textContent')).jsonValue();
 
-    // expect(text).toEqual('Увійти');
+    expect(text).toContain('Далее'); // Увійти - headless
     await login[0].click();
-
     return page.close();
+    */
   }
 }
 

@@ -6,7 +6,7 @@ const url = 'https://www.youtube.com';
 
 test.before(async () => {
   global.browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     // slowMo: 100,
     defaultViewport: { width: 1920, height: 1080 },
     args: ['--window-size=1920,1080', '--disable-infobars'],
@@ -38,6 +38,15 @@ class basicActions {
 
     await t.is(text, 'Далее');
     return page.close();
+
+    /* for Headless mod
+    const login = await page.$$('.style-suggestive.size-small');
+    const text = await (await login[2].getProperty('textContent')).jsonValue();
+
+    await t.is(text, 'Увійти'); // Увійти - headless
+    await login[0].click();
+    return page.close();
+    */
   }
 }
 
