@@ -6,12 +6,14 @@ const url = 'https://www.youtube.com';
 
 test.before(async () => {
   global.browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     // slowMo: 100,
     defaultViewport: { width: 1920, height: 1080 },
     args: ['--window-size=1920,1080', '--disable-infobars'],
   });
 });
+
+test.after(async () => browser.close());
 
 class basicActions {
   async testExample(t) {

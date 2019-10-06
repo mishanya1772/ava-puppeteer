@@ -13,7 +13,7 @@
     "ava:concurrency": "ava -v -d",
     "ava-serial": "ava -v -s -d",
     "jest:thread": "jest --runInBand",
-    "jest:threads": "jest --maxWorkers=2"
+    "jest:threads": "jest --maxWorkers=4"
   },
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
   },
   "ava": {
     "files": [
-      "**/ava/sample*.js"
+      "**/ava/Sample*.js"
     ]
   },
   "jest": {
