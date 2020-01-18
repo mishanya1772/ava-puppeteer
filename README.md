@@ -2,6 +2,9 @@
 
 ### Running e2e tests using AVA + Puppeteer; Protractor + Jasmine2; Jest + Puppeteer
 
+### Presentation: 
+    • https://slides.com/mishanyalepskiy/parallelprunning-with-js 
+
 ### Setup:
     • clone a project    
     • install all dependencies: npm i
