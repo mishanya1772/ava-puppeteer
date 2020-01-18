@@ -2,11 +2,20 @@
 
 ### Running e2e tests using AVA + Puppeteer; Protractor + Jasmine2; Jest + Puppeteer
 
-* clone the project
-* open terminal and enter: **npm i**
-* for running *Ava concurrency*: **npm run test:concurrency**
-* for running *Ava serial*: **npm run test:serial**
-* for running *Protractor*: **npm run webdriver:start** AND **npm run protrcator:thread**
-* for running *Protractor in parallel*: **npm run webdriver:start** AND **npm run protrcator:threads**
-* for running *Jest*: **npm run webdriver:start** AND **npm run jest:thread**
-* for running *Jest in parallel*: **npm run webdriver:start** AND **npm run jest:threads**
+### Setup:
+    • clone a project    
+    • install all dependencies: npm i
+
+### Ava:    
+    • run serial: npm run test:serial     
+    • run concurrency: npm run test:concurrency
+
+### Protractor
+    • run a Selenium Server: npm run webdriver:start
+    • run in 1 thread: npm run protrcator:thread
+    • run in parallel: run protrcator:threads
+
+### Jest:
+    • run a Selenium Server: npm run webdriver:start
+    • for running in 1 thread: npm run jest:thread
+    • for running in parallel: npm run jest:threads

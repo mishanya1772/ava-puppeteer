@@ -3,6 +3,6 @@ module.exports = {
   notify: true,
   testEnvironment: 'node',
   testMatch: [
-    '**/jest/Sample*.js',
+    '**/jest/specs/Sample*.js',
   ],
 };
